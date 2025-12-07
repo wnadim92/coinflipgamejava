@@ -4,14 +4,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        CoinGame coinGame = new CoinGame(args[1], args[2]);
+        CoinGame coinGame = new CoinGame(args[0], args[1]);
         int gamePlays = 0;
         String playerResponse;
 
         do {
             coinGame.startGame();
             gamePlays++;
-            System.out.println(curentWinner(coinGame) + " is the current majority winner out of " + gamePlays + "plays.");
+            if (isNotTied(coinGame)){
+                System.out.println(curentWinner(coinGame) + " is the current majority winner out of " + gamePlays + " plays.");
+            } else {
+                System.out.println("Game is currently tied with both players at even wins at " + gamePlays / 2);
+            }
             System.out.println("Play again? (y or n)");
             Scanner scanner = new Scanner(System.in);
             playerResponse = scanner.next();
@@ -24,6 +28,10 @@ public class Main {
         } else {
             return coinGame.players[0].getName();
         }
+    }
+
+    public static boolean isNotTied(CoinGame coinGame) {
+        return !(coinGame.players[0].getPlayerWins() == coinGame.players[1].getPlayerWins());
     }
 
 }

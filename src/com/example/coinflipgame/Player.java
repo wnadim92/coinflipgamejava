@@ -16,7 +16,8 @@ public class Player {
 
     public String getRandomPlayerCoinFlipChoice() {
         Coin coin = new Coin();
-        return coin.getCoinFlipDirection();
+        coinFlipChoice = coin.getCoinFlipDirection();
+        return coinFlipChoice;
     }
 
     public void setOtherPlayerCoinFlipChoice(String otherPlayerCoinFlipChoice) {
