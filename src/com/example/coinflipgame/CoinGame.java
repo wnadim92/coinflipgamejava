@@ -14,7 +14,6 @@ public class CoinGame {
         String coinFlipChoice = players[randomIndex].getRandomPlayerCoinFlipChoice();
         int otherPlayersIndex = (randomIndex == 0) ? 1 : 0;
         players[otherPlayersIndex].setOtherPlayerCoinFlipChoice(coinFlipChoice);
-        Coin coin = new Coin();
         coin.setCoinFlip();
         String coinFlipDirection = coin.getCoinFlipDirection();
         players[randomIndex].setWin(coinFlipDirection);
