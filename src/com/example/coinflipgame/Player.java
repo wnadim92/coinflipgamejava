@@ -11,15 +11,24 @@ public class Player {
     }
 
     public String getRandomPlayerCoinFlipChoice() {
-
+        Coin coin = new Coin();
+        return coin.getCoinFlipDirection();
     }
 
     public void setOtherPlayerCoinFlipChoice(String otherPlayerCoinFlipChoice) {
-
+        Coin coin = new Coin();
+        String[] coinFlipDirectionValues = coin.getCoinFlipDirectionValues();
+        coinFlipChoice = (otherPlayerCoinFlipChoice.equals(coinFlipDirectionValues[0]))? coinFlipDirectionValues[1] : coinFlipDirectionValues[0];
     }
 
     public void setWin(String coinFlipDirection) {
+        if (coinFlipChoice.equals(coinFlipDirection)) {
+            winCount++;
+        }
+    }
 
+    public int getPlayerWins() {
+        return winCount;
     }
 
 }

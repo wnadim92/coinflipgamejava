@@ -18,5 +18,9 @@ public class Coin {
         return coinFlipDirection;
     }
 
+    public String[] getCoinFlipDirectionValues() {
+        return coinFlipDirectionValues;
+    }
+
 
 }
