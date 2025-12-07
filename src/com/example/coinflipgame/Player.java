@@ -24,6 +24,7 @@ public class Player {
     public void setWin(String coinFlipDirection) {
         if (coinFlipChoice.equals(coinFlipDirection)) {
             winCount++;
+            System.out.println(name + " won " + winCount + " times.");
         }
     }
 
