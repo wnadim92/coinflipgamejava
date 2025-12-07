@@ -10,6 +10,10 @@ public class Player {
         name = n;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String getRandomPlayerCoinFlipChoice() {
         Coin coin = new Coin();
         return coin.getCoinFlipDirection();
