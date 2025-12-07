@@ -1,5 +1,8 @@
 package com.example.coinflipgame;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Player {
 
     private String name;
@@ -16,7 +19,15 @@ public class Player {
 
     public String getRandomPlayerCoinFlipChoice() {
         Coin coin = new Coin();
-        coinFlipChoice = coin.getCoinFlipDirection();
+        String[] coinDirectionValues = coin.getCoinFlipDirectionValues();
+        Scanner scanner = new Scanner(System.in);
+        int playerResponse = 0;
+        do {
+            System.out.println(name + " Choose, 1 for \"Heads\" or 2 for \"Tails\"");
+            playerResponse = scanner.nextInt();
+        } while (!(playerResponse == 1) && !(playerResponse == 2));
+        coinFlipChoice = coinDirectionValues[playerResponse-1];
+        scanner.close();
         return coinFlipChoice;
     }
 

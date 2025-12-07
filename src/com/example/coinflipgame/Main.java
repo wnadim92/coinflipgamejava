@@ -17,8 +17,9 @@ public class Main {
                 System.out.println("Game is currently tied with both players at even wins at " + gamePlays / 2);
             }
             System.out.println("Play again? (y or n)");
-            Scanner scanner = new Scanner(System.in);
-            playerResponse = scanner.next();
+            Scanner scannerInput = new Scanner(System.in);
+            playerResponse = scannerInput.next();
+            scannerInput.close();
         } while (playerResponse.startsWith("y") || playerResponse.startsWith("Y"));
     }
 
